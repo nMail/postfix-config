@@ -1,0 +1,13 @@
+myhostname = mail.runsui.cn
+mydomain = runsui.cn
+myorigin = $mydomain
+inet_interfaces = all
+mydestination = $myhostname ,localhost.$mydomain,localhost,$mydomain
+mynetworks = 127.0.0.0/8
+home_mailbox = Maildir/
+
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = yes
+smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated,reject_unauth_destination,permit
+broken_sasl_auth_clients = yes
